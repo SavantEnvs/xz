@@ -1,0 +1,9 @@
+project: savantenvs/xz
+target: fuzz_decode_stream
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_decode_stream/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_decode_stream
+    libfuzzer: true
+    dictionary: /mayhem/tests/ossfuzz/config/fuzz_xz.dict
